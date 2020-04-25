@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+body{
+  background-color: #1d1e22;
+  color: #d4d4dc;
+  margin: 0;
+  padding: 0;
+  font-family: montaga;
+  font-weight: 500;
+  text-decoration: none;
+}
+.topMenu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 10%;
+  width: 100%;
+  background-color: rgba(0,0,0,0);
+  z-index: 5;
+}
+.logo{
+  display: flex;
+}
+.navBar{
+  display: flex;
+  margin: 12px;
+}
+li, a{
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d4d4dc;
+}
+.navBar li{
+  display: inline-block;
+  list-style: none;
+  font-family: almendra;
+  transition-duration: .5s;
+  transition-timing-function: ease; 
+}
+.navBar a:hover{
+  color: #f0f004;
+}
+.container{
+  display: grid;
+  width: 100%;
+  height: 900px;
+  grid-template-areas: 
+    "t t"
+    "cont cont"
+    "end end";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  z-index: 0;
+  gap: 50px;
+}
+.pageTitle {
+  position: relative;
+  margin: 0;
+  grid-area: t;
+  display: flex;
+  flex-direction: column;
+  min-height: 410px;
+  width: 100%;
+  background-image: url(media/warrior.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 1px 1px 1px #222;
+  font-family: almendra, sans-serif;
+}
+.pageTitle h1{
+  position: relative;
+  color: #f0f004;
+  text-shadow: 1px 1px 1px #222;
+  top:280px;
+  left: -500px;
+  font-size: 40px;
+  animation-name: start1;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+@keyframes start1{
+  100%{
+    left: 15px;
+  }
+}
+.pageTitle h2{
+  position: relative;
+  left: 40px;
+  top: 230px;
+  font-size: 30px;
+  color: rgba(252,252,252,0);
+  animation-name: start2;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+@keyframes start2{
+  100%{
+    color: #d4d4dc;
+    text-shadow: 1px 1px 1px #222;
+  }
+}
+
+.store{
+  grid-area: cont;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,2fr));
+}
+.item{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 20px;
+  align-content: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  color: rgba(25,25,25,0);
+}
+.item p{
+  position: relative;
+  top: 35px;
+  left: 30px;
+  margin: 10px;
+  z-index: 1;
+  color: rgba(25,25,25,0);
+  transition-duration: 1.8;
+  transition-timing-function: ease;
+  transition-delay: .3s;
+}
+.item img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  z-index: 3;
+  transition-duration: 1.2s;
+  transition-timing-function: ease;
+}
+.item #heart{
+  left:60px;
+  top: 100px;
+  height: 30px;
+  width: 30px;
+  visibility: hidden;
+  transition-duration: .8s;
+  transition-timing-function: ease-out;
+}
+.item:hover{
+  width: 300px;
+  height: 350px;
+  border-radius: 12px;
+  color: rgba(25,25,25,.5);
+  background-color: #f0f004;
+}
+.item:hover img{
+  border-radius: 12px;
+}
+.item:hover p{
+  top:200px;
+  left:30px;
+  color: rgba(25,25,25,1);
+  text-shadow: 1px 1px 1px #222;
+}
+.item:hover #heart{
+  left: 220px;
+  top: 0px;
+  visibility: visible;
+  height: 70px;
+  width: 70px;
+}
+.endPage{
+  grid-area: end;
+  display: flex;
+
+}
+.endPage img{
+
+}
+.endText{
+  display: absolute;
+  z-index: 1;
+}
